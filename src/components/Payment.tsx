@@ -23,14 +23,19 @@ export const Payment = () => {
   };
 
   return (
-    <section id="payment" className="py-24">
+    <section id="payment" className="py-24 scroll-mt-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-          Choose Your <span className="text-transparent bg-clip-text bg-gradient-primary">Plan</span>
+          Choose Your <span className="text-transparent bg-clip-text bg-gradient-primary">Investment</span>
         </h2>
-        <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground text-center mb-4 max-w-3xl mx-auto">
           Early bird pricing ends in 5 days. Secure your spot now!
         </p>
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-sm font-semibold text-primary">
+            🔒 Secure Payment via Razorpay • 7-Day Money-Back Guarantee
+          </span>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Early Bird */}
@@ -40,8 +45,9 @@ export const Payment = () => {
             </div>
             
             <div className="text-center mb-8 mt-4">
-              <div className="text-5xl font-bold mb-2">$5.99</div>
-              <div className="text-muted-foreground">First 5 days only</div>
+              <div className="text-2xl text-muted-foreground line-through mb-1">$99</div>
+              <div className="text-5xl font-bold mb-2 text-primary">$5.99</div>
+              <div className="text-muted-foreground font-semibold">94% OFF - First 5 Days Only</div>
             </div>
 
             <ul className="space-y-4 mb-8">
@@ -71,8 +77,9 @@ export const Payment = () => {
           {/* Standard */}
           <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300">
             <div className="text-center mb-8">
+              <div className="text-2xl text-muted-foreground line-through mb-1">$99</div>
               <div className="text-5xl font-bold mb-2">$9.99</div>
-              <div className="text-muted-foreground">After early bird period</div>
+              <div className="text-muted-foreground font-semibold">90% OFF - After Early Bird</div>
             </div>
 
             <ul className="space-y-4 mb-8">
@@ -108,8 +115,9 @@ export const Payment = () => {
             </div>
             
             <div className="text-center mb-8 mt-4">
-              <div className="text-5xl font-bold mb-2">$99</div>
-              <div className="text-muted-foreground">Premium Mentorship</div>
+              <div className="text-2xl text-muted-foreground line-through mb-1">$299</div>
+              <div className="text-5xl font-bold mb-2 text-primary">$99</div>
+              <div className="text-muted-foreground font-semibold">Premium Mentorship + Direct Access</div>
             </div>
 
             <ul className="space-y-4 mb-8">
@@ -159,9 +167,14 @@ export const Payment = () => {
           </div>
         </div>
 
-        <p className="text-center text-muted-foreground mt-8 text-sm">
-          🔒 Secure payment powered by Razorpay • 7-day money-back guarantee • Lifetime access
-        </p>
+        <div className="mt-8 text-center">
+          <div className="inline-flex items-center gap-4 p-6 rounded-2xl bg-primary/5 border border-primary/20">
+            <div className="text-left">
+              <p className="text-sm text-muted-foreground mb-1">100% Money-Back Guarantee</p>
+              <p className="text-xs text-muted-foreground">Attend live sessions for 7 days. Not satisfied? Get a full refund.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

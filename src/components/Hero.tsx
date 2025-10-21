@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +10,8 @@ export const Hero = () => {
     minutes: 0,
     seconds: 0,
   });
+  
+  const [seatsRemaining] = useState(73); // Dynamic counter - you can update this
 
   useEffect(() => {
     const targetDate = new Date("2025-11-01T00:00:00").getTime();
@@ -53,35 +55,65 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-4 animate-slide-in">
-          <span className="text-sm font-semibold text-primary">🔥 Only 100 Founder Seats Available • 5 Days Left</span>
+        {/* Urgency Badge */}
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/20 border border-primary/40 mb-6 animate-slide-in backdrop-blur-sm">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+          </span>
+          <span className="text-sm font-bold text-primary">ONLY {seatsRemaining} SEATS LEFT • 5 DAYS REMAINING</span>
         </div>
 
+        {/* Tighter, benefit-first headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-slide-in" style={{ animationDelay: "0.1s" }}>
-          Launch Your AI Startup in{" "}
+          Launch an AI Startup in{" "}
           <span className="text-transparent bg-clip-text bg-gradient-primary">90 Days</span>
+          <br />
+          <span className="text-3xl md:text-5xl text-foreground/90">Live, Founder-Led</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
-          Live founder-led sessions • Build & launch your MVP • Pitch to investors
+        {/* Strong sub-headline */}
+        <p className="text-2xl md:text-3xl font-semibold text-primary mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.15s" }}>
+          Join the First 100 Founders • Starts Nov 1, 2025
         </p>
 
-        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-slide-in" style={{ animationDelay: "0.25s" }}>
-          12-week intensive program with expert mentorship, $500 cash prize, and exclusive investor access
+        {/* Clear outcome */}
+        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
+          From Idea → MVP → Investor-Ready Pitch
         </p>
 
-        <div className="mb-12 animate-slide-in" style={{ animationDelay: "0.3s" }}>
+        {/* Primary CTA - Above the fold, high contrast */}
+        <div className="mb-8 animate-slide-in" style={{ animationDelay: "0.25s" }}>
           <Button
             size="lg"
             onClick={scrollToPayment}
-            className="group bg-gradient-primary hover:shadow-glow-blue-strong text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+            className="group bg-gradient-primary hover:shadow-glow-blue-strong text-primary-foreground px-10 py-7 text-xl font-bold rounded-xl transition-all duration-300 hover:scale-105 animate-glow-pulse"
           >
-            Reserve Your Spot – Enroll Now for $5.99
+            Reserve Your Spot – $5.99 Early Bird
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <p className="text-sm text-muted-foreground mt-4">
-            Limited to 100 founders per batch
-          </p>
+          
+          <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+            <Users className="w-4 h-4" />
+            <span>{seatsRemaining} of 100 founder seats remaining</span>
+          </div>
+        </div>
+
+        {/* Value indicators */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12 animate-slide-in" style={{ animationDelay: "0.3s" }}>
+          <div className="p-4 rounded-lg bg-card/30 backdrop-blur-sm border border-primary/10">
+            <div className="text-2xl font-bold text-primary mb-1">$99</div>
+            <div className="text-xs text-muted-foreground line-through mb-1">Regular Price</div>
+            <div className="text-sm font-semibold">Save $93 Today</div>
+          </div>
+          <div className="p-4 rounded-lg bg-card/30 backdrop-blur-sm border border-primary/10">
+            <div className="text-2xl font-bold text-primary mb-1">90 Days</div>
+            <div className="text-sm font-semibold">Idea to Launch</div>
+          </div>
+          <div className="p-4 rounded-lg bg-card/30 backdrop-blur-sm border border-primary/10">
+            <div className="text-2xl font-bold text-primary mb-1">$500</div>
+            <div className="text-sm font-semibold">Cash Prize Winner</div>
+          </div>
         </div>
 
         {/* Countdown Timer */}

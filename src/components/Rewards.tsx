@@ -2,14 +2,22 @@ import { Trophy } from "lucide-react";
 
 export const Rewards = () => {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-secondary/20 to-background relative overflow-hidden">
+      {/* Spotlight effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-primary opacity-10 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="inline-block mb-4">
+            <div className="px-6 py-2 rounded-full bg-gradient-primary text-primary-foreground font-bold text-sm animate-glow-pulse">
+              🏆 COMPETITION PRIZE
+            </div>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Win <span className="text-transparent bg-clip-text bg-gradient-primary">$500 Cash Prize</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Pitch your startup at Demo Day and compete for the grand prize
+            The best-performing startup wins $500. All participants compete for glory and investor opportunities.
           </p>
         </div>
 
