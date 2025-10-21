@@ -74,12 +74,12 @@ export const Hero = () => {
 
         {/* Strong sub-headline */}
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.15s" }}>
-          Weekend Sessions Only (Sat & Sun) • Join the First 100 Founders
+          Join the First 100 Founders • Starts Nov 1, 2025
         </p>
 
         {/* Clear outcome */}
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
-          From Idea → MVP → Investor-Ready Pitch • Starts Nov 1, 2025
+          From Idea → MVP → Investor-Ready Pitch in 90 Days
         </p>
 
         {/* Primary CTA - Above the fold, high contrast */}

@@ -47,7 +47,7 @@ export const Curriculum = () => {
           Course <span className="text-transparent bg-clip-text bg-gradient-primary">Curriculum</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-          A 90-day journey from idea to funded startup — Weekend sessions only (Saturdays & Sundays)
+          A 90-day intensive journey from idea to funded startup
         </p>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

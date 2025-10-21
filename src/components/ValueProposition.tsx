@@ -27,7 +27,7 @@ export const ValueProposition = () => {
             Everything You Need to <span className="text-transparent bg-clip-text bg-gradient-primary">Launch & Scale</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From zero to investor-ready in 90 days — Weekend sessions only
+            From zero to investor-ready in 90 days
           </p>
         </div>
 
