@@ -5,7 +5,7 @@ const phases = [
     icon: BookOpen,
     phase: "Phase 1",
     title: "Ideation & Problem Discovery",
-    duration: "Weeks 1-4",
+    duration: "Weekends 1-4 (Days 1-30)",
     topics: [
       "Identifying real AI opportunities in the market",
       "Problem validation frameworks and user research",
@@ -17,7 +17,7 @@ const phases = [
     icon: Rocket,
     phase: "Phase 2",
     title: "AI MVP Building",
-    duration: "Weeks 5-9",
+    duration: "Weekends 5-9 (Days 31-60)",
     topics: [
       "Choosing the right AI tech stack for your startup",
       "Building and deploying your minimum viable product",
@@ -29,7 +29,7 @@ const phases = [
     icon: TrendingUp,
     phase: "Phase 3",
     title: "Fundraising & Growth",
-    duration: "Weeks 10-12",
+    duration: "Weekends 10-13 (Days 61-90)",
     topics: [
       "Creating compelling investor pitch decks",
       "Fundraising strategies and investor outreach",
@@ -47,7 +47,7 @@ export const Curriculum = () => {
           Course <span className="text-transparent bg-clip-text bg-gradient-primary">Curriculum</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-          A structured 12-week journey from idea to funded startup, taught by experienced founders
+          A 90-day journey from idea to funded startup — Weekend sessions only (Saturdays & Sundays)
         </p>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

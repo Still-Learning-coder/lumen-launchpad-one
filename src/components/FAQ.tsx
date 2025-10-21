@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "How much time do I need to commit per week?",
-    answer: "Plan for 6-8 hours per week: 2 live sessions (2 hours each) plus 2-4 hours for assignments and building your MVP. Everything is recorded, so you can learn at your own pace if you have scheduling conflicts.",
+    answer: "Sessions are only on Saturdays and Sundays. Plan for 10-15 hours per weekend including live sessions, working on your startup, and engaging with the community. This weekend-only format is perfect for working professionals.",
   },
   {
     question: "What guarantee or support is provided?",
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "How long is the course?",
-    answer: "The AI Startup Launchpad is a 12-week (3-month) intensive program. We have live sessions twice a week, plus you get lifetime access to all recorded content and materials.",
+    answer: "The AI Startup Launchpad is a 90-day intensive program with live sessions only on weekends (Saturdays and Sundays). This makes it perfect for working professionals. You also get lifetime access to all recorded content and materials.",
   },
   {
     question: "What if I can't attend live sessions?",
