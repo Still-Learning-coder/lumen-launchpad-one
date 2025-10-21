@@ -39,7 +39,7 @@ export const Founder = () => {
                 asChild
               >
                 <a
-                  href="https://www.linkedin.com/in/venkatesh-mishra"
+                  href="https://www.linkedin.com/in/foundervenkateshmishra"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"

@@ -17,7 +17,7 @@ export const Footer = () => {
           <div className="flex items-center gap-4">
             <p className="text-muted-foreground">Built by Venkatesh Mishra</p>
             <a
-              href="https://www.linkedin.com/in/venkatesh-mishra"
+              href="https://www.linkedin.com/in/foundervenkateshmishra"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-primary/20 hover:border-primary/40 transition-colors"
