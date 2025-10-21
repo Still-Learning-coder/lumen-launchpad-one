@@ -1,25 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+
+// Stripe price IDs
+const PRICE_IDS = {
+  earlyBird: "price_1SKdzgALEZvEdhyZaBuqc26F",
+  standard: "price_1SKdztALEZvEdhyZncS1ebbj",
+  premium: "price_1SKe0JALEZvEdhyZRKkmbfyA",
+};
 
 export const Payment = () => {
-  const handlePayment = (plan: string, amount: number) => {
-    // Placeholder for Razorpay integration
-    toast.info(`Payment integration coming soon! Selected: ${plan} - $${amount}`);
+  const [loading, setLoading] = useState<string | null>(null);
+
+  const handlePayment = async (plan: string, priceId: string, planName: string) => {
+    setLoading(plan);
     
-    // This is where you'll integrate Razorpay
-    // const options = {
-    //   key: "YOUR_RAZORPAY_KEY",
-    //   amount: amount * 100,
-    //   currency: "USD",
-    //   name: "AI Startup Launchpad",
-    //   description: plan,
-    //   handler: function (response) {
-    //     toast.success("Payment successful!");
-    //   }
-    // };
-    // const rzp = new window.Razorpay(options);
-    // rzp.open();
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: { priceId },
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        // Open Stripe Checkout in a new tab
+        window.open(data.url, "_blank");
+        toast.success(`Opening checkout for ${planName}...`);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      toast.error("Failed to initiate payment. Please try again.");
+    } finally {
+      setLoading(null);
+    }
   };
 
   return (
@@ -33,7 +48,7 @@ export const Payment = () => {
         </p>
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-sm font-semibold text-primary">
-            🔒 Secure Payment via Razorpay • 7-Day Money-Back Guarantee
+            🔒 Secure Payment via Stripe • 7-Day Money-Back Guarantee
           </span>
         </div>
 
@@ -66,11 +81,12 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("Early Bird", 5.99)}
+              onClick={() => handlePayment("earlyBird", PRICE_IDS.earlyBird, "Early Bird")}
               size="lg"
               className="w-full bg-gradient-primary hover:shadow-glow-blue text-primary-foreground"
+              disabled={loading === "earlyBird"}
             >
-              Enroll Now - $5.99
+              {loading === "earlyBird" ? "Processing..." : "Enroll Now - $5.99"}
             </Button>
           </div>
 
@@ -98,12 +114,13 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("Standard", 9.99)}
+              onClick={() => handlePayment("standard", PRICE_IDS.standard, "Standard")}
               size="lg"
               variant="outline"
               className="w-full border-primary/40 hover:border-primary hover:bg-primary/10"
+              disabled={loading === "standard"}
             >
-              Enroll - $9.99
+              {loading === "standard" ? "Processing..." : "Enroll - $9.99"}
             </Button>
           </div>
 
@@ -137,11 +154,12 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("Premium Mentorship", 99)}
+              onClick={() => handlePayment("premium", PRICE_IDS.premium, "Premium Mentorship")}
               size="lg"
               className="w-full bg-gradient-primary hover:shadow-glow-blue-strong text-primary-foreground"
+              disabled={loading === "premium"}
             >
-              Get Premium - $99
+              {loading === "premium" ? "Processing..." : "Get Premium - $99"}
             </Button>
           </div>
         </div>
