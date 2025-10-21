@@ -8,8 +8,10 @@ import advisor7 from "@/assets/advisor-7.jpg";
 import advisor8 from "@/assets/advisor-8.jpg";
 import advisor9 from "@/assets/advisor-9.jpg";
 import advisor10 from "@/assets/advisor-10.jpg";
+import advisorTaiman from "@/assets/advisor-taiman.jpg";
 
 const advisors = [
+  { name: "Taiman Aamir", role: "Co-Founder", company: "AskLumenAI", image: advisorTaiman },
   { name: "Dr. Sarah Chen", role: "AI Research Lead", company: "TechVentures AI", image: advisor1 },
   { name: "Michael Rodriguez", role: "Serial Entrepreneur", company: "3x AI Startup Founder", image: advisor2 },
   { name: "Priya Sharma", role: "VP of Product", company: "CloudAI Solutions", image: advisor3 },
@@ -19,7 +21,6 @@ const advisors = [
   { name: "Elena Volkov", role: "AI Ethics Expert", company: "Responsible AI Institute", image: advisor7 },
   { name: "Robert Thompson", role: "CTO", company: "AutomateAI Inc", image: advisor8 },
   { name: "Fatima Al-Rashid", role: "Data Scientist", company: "Google AI", image: advisor9 },
-  { name: "Carlos Mendez", role: "Product Manager", company: "Microsoft AI", image: advisor10 },
 ];
 
 export const Advisors = () => {
