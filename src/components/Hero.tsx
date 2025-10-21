@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.jpg";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export const Hero = () => {
@@ -34,11 +35,20 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-dark">
-        <div className="absolute inset-0 bg-gradient-glow opacity-50"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroBg} 
+          alt="AI Startup Accelerator Environment" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70"></div>
+      </div>
+      
+      {/* Animated glow effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
       </div>
 
       {/* Content */}

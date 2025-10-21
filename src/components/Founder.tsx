@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import founderImg from "@/assets/founder.jpg";
 
 export const Founder = () => {
   return (
@@ -12,10 +13,10 @@ export const Founder = () => {
 
           <div className="flex flex-col md:flex-row items-center gap-12 p-8 md:p-12 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-gradient-primary p-1 flex-shrink-0">
-              <div className="w-full h-full rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full rounded-2xl overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
-                  alt="Venkatesh Mishra"
+                  src={founderImg} 
+                  alt="Venkatesh Mishra - Founder of AskLumenAI"
                   className="w-full h-full object-cover"
                 />
               </div>

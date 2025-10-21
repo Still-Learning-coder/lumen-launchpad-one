@@ -1,14 +1,25 @@
+import advisor1 from "@/assets/advisor-1.jpg";
+import advisor2 from "@/assets/advisor-2.jpg";
+import advisor3 from "@/assets/advisor-3.jpg";
+import advisor4 from "@/assets/advisor-4.jpg";
+import advisor5 from "@/assets/advisor-5.jpg";
+import advisor6 from "@/assets/advisor-6.jpg";
+import advisor7 from "@/assets/advisor-7.jpg";
+import advisor8 from "@/assets/advisor-8.jpg";
+import advisor9 from "@/assets/advisor-9.jpg";
+import advisor10 from "@/assets/advisor-10.jpg";
+
 const advisors = [
-  { name: "Dr. Sarah Chen", role: "AI Research Lead", company: "TechVentures AI" },
-  { name: "Michael Rodriguez", role: "Serial Entrepreneur", company: "3x AI Startup Founder" },
-  { name: "Priya Sharma", role: "VP of Product", company: "CloudAI Solutions" },
-  { name: "James Peterson", role: "Investment Partner", company: "NextGen Ventures" },
-  { name: "Aisha Okonkwo", role: "ML Engineer", company: "DeepMind Alumni" },
-  { name: "David Kim", role: "Growth Strategist", company: "ScaleAI Advisor" },
-  { name: "Elena Volkov", role: "AI Ethics Expert", company: "Responsible AI Institute" },
-  { name: "Robert Thompson", role: "CTO", company: "AutomateAI Inc" },
-  { name: "Fatima Al-Rashid", role: "Data Scientist", company: "Google AI" },
-  { name: "Carlos Mendez", role: "Product Manager", company: "Microsoft AI" },
+  { name: "Dr. Sarah Chen", role: "AI Research Lead", company: "TechVentures AI", image: advisor1 },
+  { name: "Michael Rodriguez", role: "Serial Entrepreneur", company: "3x AI Startup Founder", image: advisor2 },
+  { name: "Priya Sharma", role: "VP of Product", company: "CloudAI Solutions", image: advisor3 },
+  { name: "James Peterson", role: "Investment Partner", company: "NextGen Ventures", image: advisor4 },
+  { name: "Aisha Okonkwo", role: "ML Engineer", company: "DeepMind Alumni", image: advisor5 },
+  { name: "David Kim", role: "Growth Strategist", company: "ScaleAI Advisor", image: advisor6 },
+  { name: "Elena Volkov", role: "AI Ethics Expert", company: "Responsible AI Institute", image: advisor7 },
+  { name: "Robert Thompson", role: "CTO", company: "AutomateAI Inc", image: advisor8 },
+  { name: "Fatima Al-Rashid", role: "Data Scientist", company: "Google AI", image: advisor9 },
+  { name: "Carlos Mendez", role: "Product Manager", company: "Microsoft AI", image: advisor10 },
 ];
 
 export const Advisors = () => {
@@ -29,9 +40,9 @@ export const Advisors = () => {
               className="group relative p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue flex flex-col items-center text-center"
             >
               <div className="w-24 h-24 mb-4 rounded-full bg-gradient-primary p-0.5">
-                <div className="w-full h-full rounded-full bg-muted flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
-                    src="/placeholder.svg" 
+                    src={advisor.image} 
                     alt={advisor.name}
                     className="w-full h-full object-cover"
                   />
