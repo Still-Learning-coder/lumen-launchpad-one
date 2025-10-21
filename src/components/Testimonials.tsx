@@ -41,9 +41,9 @@ import testimonial39 from "@/assets/testimonial-39.jpg";
 import testimonial40 from "@/assets/testimonial-40.jpg";
 
 const testimonials = [
-  { name: "Sarah Chen", startup: "VisionAI", text: "This program gave me the framework to validate my AI idea and secure $500K in seed funding within 3 months!", image: testimonial1 },
-  { name: "Michael Rodriguez", startup: "DataFlow", text: "The mentorship was invaluable. I went from concept to MVP in just 8 weeks.", image: testimonial2 },
-  { name: "James Washington", startup: "SmartCode", text: "Best investment I made in my startup journey. The curriculum is comprehensive and practical.", image: testimonial3 },
+  { name: "Sarah Chen", startup: "VisionAI", text: "Launched my MVP in 6 weeks and got my first 100 users. The live feedback sessions with Venkatesh were game-changing. Now generating $2K MRR.", image: testimonial1 },
+  { name: "Michael Rodriguez", startup: "DataFlow", text: "Raised $50K from angels I met through the program. The pitch preparation and investor introductions were invaluable. ROI was 500x the course fee.", image: testimonial2 },
+  { name: "James Washington", startup: "SmartCode", text: "Built and launched my SaaS in 8 weeks flat. Got into top 10 and pitched to 3 VCs. The accountability and weekly deadlines kept me on track.", image: testimonial3 },
   { name: "Priya Patel", startup: "AIAssist", text: "I learned more in 12 weeks than I did in 2 years of trying to figure it out alone.", image: testimonial4 },
   { name: "Maria Garcia", startup: "AutoML Pro", text: "The advisor network opened doors I never thought possible. Highly recommended!", image: testimonial5 },
   { name: "Ahmed Khan", startup: "NeuralNet Solutions", text: "From zero to funded startup in 3 months. The program delivers what it promises.", image: testimonial6 },

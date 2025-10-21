@@ -53,18 +53,21 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20 mb-8 animate-slide-in">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Cohort Starts November 1st, 2025</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-4 animate-slide-in">
+          <span className="text-sm font-semibold text-primary">🔥 Only 100 Founder Seats Available • 5 Days Left</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-slide-in" style={{ animationDelay: "0.1s" }}>
-          Launch Your AI Startup<br />
-          <span className="text-transparent bg-clip-text bg-gradient-primary">in 3 Months</span>
+          Launch Your AI Startup in{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-primary">90 Days</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
-          Learn, Build, and Grow with the Founders of AskLumenAI
+        <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
+          Live founder-led sessions • Build & launch your MVP • Pitch to investors
+        </p>
+
+        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-slide-in" style={{ animationDelay: "0.25s" }}>
+          12-week intensive program with expert mentorship, $500 cash prize, and exclusive investor access
         </p>
 
         <div className="mb-12 animate-slide-in" style={{ animationDelay: "0.3s" }}>

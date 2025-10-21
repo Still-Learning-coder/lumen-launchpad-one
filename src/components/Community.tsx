@@ -7,10 +7,13 @@ export const Community = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Join Our <span className="text-transparent bg-clip-text bg-gradient-primary">Community</span>
+            Join Our <span className="text-transparent bg-clip-text bg-gradient-primary">Founder Community</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            Network with 1000+ aspiring AI founders, share ideas, and grow together
+          <p className="text-xl text-muted-foreground mb-4">
+            Network with 1000+ AI founders, get ongoing support, and grow together
+          </p>
+          <p className="text-lg text-muted-foreground mb-12">
+            <span className="text-primary font-semibold">Lifetime access</span> to community • Monthly expert sessions • Job opportunities • Co-founder matching
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -20,7 +23,7 @@ export const Community = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Discord Community</h3>
               <p className="text-muted-foreground mb-6">
-                Real-time chat, Q&A sessions, and exclusive channels for course participants
+                24/7 support, weekly expert AMAs, co-founder matching, job board, and exclusive channels for alumni networking
               </p>
               <Button 
                 size="lg"
@@ -36,7 +39,7 @@ export const Community = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">WhatsApp Group</h3>
               <p className="text-muted-foreground mb-6">
-                Quick updates, daily tips, and instant support from fellow founders
+                Daily AI news, quick wins, instant peer support, and accountability partners for your startup journey
               </p>
               <Button 
                 size="lg"

@@ -7,20 +7,24 @@ import {
 
 const faqs = [
   {
+    question: "What if I'm not from an AI or technical background?",
+    answer: "Perfect! You don't need any AI or coding experience. We teach everything from scratch with practical, hands-on projects. 60% of our successful founders came from non-technical backgrounds. You'll learn exactly what you need to build and launch your AI startup.",
+  },
+  {
+    question: "How much time do I need to commit per week?",
+    answer: "Plan for 6-8 hours per week: 2 live sessions (2 hours each) plus 2-4 hours for assignments and building your MVP. Everything is recorded, so you can learn at your own pace if you have scheduling conflicts.",
+  },
+  {
+    question: "What guarantee or support is provided?",
+    answer: "We offer a 7-day money-back guarantee—no questions asked. Plus, you get lifetime access to all content, ongoing community support, and quarterly alumni sessions with new industry insights and networking opportunities.",
+  },
+  {
     question: "How long is the course?",
     answer: "The AI Startup Launchpad is a 12-week (3-month) intensive program. We have live sessions twice a week, plus you get lifetime access to all recorded content and materials.",
   },
   {
-    question: "What's the difference between live and recorded sessions?",
-    answer: "Live sessions happen in real-time where you can interact with instructors and ask questions. All sessions are recorded so you can rewatch them anytime. Even if you miss a live session, you'll have full access to the recording within 24 hours.",
-  },
-  {
-    question: "Do I get a certificate?",
-    answer: "Yes! Upon successful completion of the course and final project submission, you'll receive a verified certificate of completion from AskLumenAI that you can share on LinkedIn and your resume.",
-  },
-  {
     question: "What if I can't attend live sessions?",
-    answer: "No problem! All sessions are recorded and you'll have lifetime access. We also have a vibrant community where you can ask questions and get support from instructors and peers anytime.",
+    answer: "No problem! All sessions are recorded and you'll have full access within 24 hours. We also have a vibrant community where you can ask questions and get support from instructors and peers anytime.",
   },
   {
     question: "Is the early bird price really for 5 days only?",

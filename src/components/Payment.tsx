@@ -138,8 +138,29 @@ export const Payment = () => {
           </div>
         </div>
 
+        <div className="mt-12 p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-primary/20 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold mb-6 text-center">What Happens After You Enroll?</h3>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary font-bold text-xl">1</div>
+              <h4 className="font-semibold mb-2">Instant Confirmation</h4>
+              <p className="text-sm text-muted-foreground">Get email confirmation within 5 minutes with access to community</p>
+            </div>
+            <div>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary font-bold text-xl">2</div>
+              <h4 className="font-semibold mb-2">Pre-Course Materials</h4>
+              <p className="text-sm text-muted-foreground">Receive prep materials and introductory videos within 24 hours</p>
+            </div>
+            <div>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary font-bold text-xl">3</div>
+              <h4 className="font-semibold mb-2">First Live Session</h4>
+              <p className="text-sm text-muted-foreground">Join the kickoff session on November 1st, 2025 and start building</p>
+            </div>
+          </div>
+        </div>
+
         <p className="text-center text-muted-foreground mt-8 text-sm">
-          Secure payment powered by Razorpay. Money-back guarantee within 7 days.
+          🔒 Secure payment powered by Razorpay • 7-day money-back guarantee • Lifetime access
         </p>
       </div>
     </section>
