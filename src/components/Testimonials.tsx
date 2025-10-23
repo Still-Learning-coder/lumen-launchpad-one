@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import testimonial3 from "@/assets/testimonial-3.jpg";
@@ -84,50 +86,64 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
           Success <span className="text-transparent bg-clip-text bg-gradient-primary">Stories</span>
         </h2>
-        <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
           Join hundreds of founders who have launched successful AI startups through our program
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-primary p-0.5 flex-shrink-0">
-                  <div className="w-full h-full rounded-full overflow-hidden">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
+        <div className="flex justify-center mb-12">
+          <Button
+            size="lg"
+            onClick={() => setShowAll(!showAll)}
+            className="bg-gradient-primary hover:shadow-glow-blue text-primary-foreground px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105"
+          >
+            {showAll ? "Hide Success Stories" : "View Success Stories"}
+          </Button>
+        </div>
+
+        {showAll && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto animate-fade-in">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-primary p-0.5 flex-shrink-0">
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-foreground truncate">{testimonial.name}</h4>
+                    <p className="text-sm text-primary truncate">{testimonial.startup}</p>
                   </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-bold text-foreground truncate">{testimonial.name}</h4>
-                  <p className="text-sm text-primary truncate">{testimonial.startup}</p>
+
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
                 </div>
-              </div>
 
-              <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                ))}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "{testimonial.text}"
+                </p>
               </div>
-
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                "{testimonial.text}"
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

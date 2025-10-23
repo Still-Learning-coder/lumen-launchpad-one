@@ -3,9 +3,9 @@ import { BookOpen, Rocket, TrendingUp } from "lucide-react";
 const phases = [
   {
     icon: BookOpen,
-    phase: "Phase 1",
+    phase: "Week 1",
     title: "Ideation & Problem Discovery",
-    duration: "Weekends 1-4 (Days 1-30)",
+    duration: "Days 1-7",
     topics: [
       "Identifying real AI opportunities in the market",
       "Problem validation frameworks and user research",
@@ -15,9 +15,9 @@ const phases = [
   },
   {
     icon: Rocket,
-    phase: "Phase 2",
+    phase: "Weeks 2-3",
     title: "AI MVP Building",
-    duration: "Weekends 5-9 (Days 31-60)",
+    duration: "Days 8-21",
     topics: [
       "Choosing the right AI tech stack for your startup",
       "Building and deploying your minimum viable product",
@@ -27,9 +27,9 @@ const phases = [
   },
   {
     icon: TrendingUp,
-    phase: "Phase 3",
+    phase: "Week 4",
     title: "Fundraising & Growth",
-    duration: "Weekends 10-13 (Days 61-90)",
+    duration: "Days 22-30",
     topics: [
       "Creating compelling investor pitch decks",
       "Fundraising strategies and investor outreach",
@@ -47,7 +47,7 @@ export const Curriculum = () => {
           Course <span className="text-transparent bg-clip-text bg-gradient-primary">Curriculum</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-          A 90-day intensive journey from idea to funded startup
+          A 30-day intensive journey from problem identification to funded startup
         </p>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

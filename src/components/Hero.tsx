@@ -14,7 +14,7 @@ export const Hero = () => {
   const [seatsRemaining] = useState(6); // Dynamic counter - you can update this
 
   useEffect(() => {
-    const targetDate = new Date("2025-11-01T00:00:00").getTime();
+    const targetDate = new Date("2025-11-10T00:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -37,20 +37,22 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background image with enhanced overlay */}
       <div className="absolute inset-0">
         <img 
           src={heroBg} 
-          alt="AI Startup Accelerator Environment" 
-          className="w-full h-full object-cover"
+          alt="AI Startup Accelerator - Transform Your Idea Into Reality" 
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/10"></div>
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }}></div>
       </div>
       
-      {/* Animated glow effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      {/* Enhanced animated glow effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] animate-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[100px] animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[150px]"></div>
       </div>
 
       {/* Content */}
@@ -67,19 +69,19 @@ export const Hero = () => {
         {/* Tighter, benefit-first headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-slide-in" style={{ animationDelay: "0.1s" }}>
           Launch an AI Startup in{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-primary">90 Days</span>
+          <span className="text-transparent bg-clip-text bg-gradient-primary">30 Days</span>
           <br />
           <span className="text-3xl md:text-5xl text-foreground/90">Live, Founder-Led</span>
         </h1>
 
         {/* Strong sub-headline */}
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.15s" }}>
-          Join the First 100 Founders • Starts Nov 1, 2025
+          Join the First 100 Founders • Starts Nov 10, 2025
         </p>
 
         {/* Clear outcome */}
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.2s" }}>
-          From Idea → MVP → Investor-Ready Pitch in 90 Days
+          From Problem Discovery → MVP → Investor-Ready in 30 Days
         </p>
 
         {/* Primary CTA - Above the fold, high contrast */}
@@ -107,7 +109,7 @@ export const Hero = () => {
             <div className="text-sm font-semibold">Save $93 Today</div>
           </div>
           <div className="p-4 rounded-lg bg-card/30 backdrop-blur-sm border border-primary/10">
-            <div className="text-2xl font-bold text-primary mb-1">90 Days</div>
+            <div className="text-2xl font-bold text-primary mb-1">30 Days</div>
             <div className="text-sm font-semibold">Idea to Launch</div>
           </div>
           <div className="p-4 rounded-lg bg-card/30 backdrop-blur-sm border border-primary/10">

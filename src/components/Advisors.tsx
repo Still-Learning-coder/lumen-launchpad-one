@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import advisor1 from "@/assets/advisor-1.jpg";
 import advisor2 from "@/assets/advisor-2.jpg";
 import advisor3 from "@/assets/advisor-3.jpg";
@@ -24,18 +26,21 @@ const advisors = [
 ];
 
 export const Advisors = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedAdvisors = showAll ? advisors : advisors.slice(0, 3);
+
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
           Learn from <span className="text-transparent bg-clip-text bg-gradient-primary">Expert Advisors</span>
         </h2>
-        <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-          Get mentored by 10 successful founders and AI professionals who have built and scaled AI companies
+        <p className="text-xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+          Get mentored by successful founders and AI professionals who have built and scaled AI companies
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {advisors.map((advisor, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+          {displayedAdvisors.map((advisor, index) => (
             <div
               key={index}
               className="group relative p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue flex flex-col items-center text-center"
@@ -54,6 +59,16 @@ export const Advisors = () => {
               <p className="text-xs text-muted-foreground">{advisor.company}</p>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Button
+            size="lg"
+            onClick={() => setShowAll(!showAll)}
+            className="bg-gradient-primary hover:shadow-glow-blue text-primary-foreground px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105"
+          >
+            {showAll ? "Show Less" : "View More Partners"}
+          </Button>
         </div>
       </div>
     </section>

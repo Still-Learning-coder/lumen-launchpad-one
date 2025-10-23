@@ -48,6 +48,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%) 0%, hsl(184 100% 60%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(194 100% 50% / 0.15) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(194 100% 20% / 0.95) 0%, hsl(0 0% 3% / 0.98) 50%, hsl(184 80% 15% / 0.95) 100%);
     
     /* Shadows and effects */
     --glow-blue: 0 0 40px hsl(194 100% 50% / 0.4);
