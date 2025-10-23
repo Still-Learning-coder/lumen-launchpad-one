@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/cosmic-space-bg.jpg";
+import { SpaceBackground } from "./SpaceBackground";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export const Hero = () => {
@@ -37,16 +37,10 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with enhanced overlay */}
-      <div className="absolute inset-0">
-        <img 
-          src={heroBg} 
-          alt="AI Startup Accelerator - Transform Your Idea Into Reality" 
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/10"></div>
-        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }}></div>
-      </div>
+      {/* Animated 3D space background */}
+      <SpaceBackground />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/90 to-primary/10"></div>
+      <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }}></div>
       
       {/* Enhanced animated glow effects */}
       <div className="absolute inset-0 overflow-hidden">
