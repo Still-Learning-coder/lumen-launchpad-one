@@ -76,7 +76,7 @@ export const Hero = () => {
 
         {/* Strong sub-headline */}
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-4 max-w-3xl mx-auto animate-slide-in" style={{ animationDelay: "0.15s" }}>
-          Join the First 100 Founders • Starts Nov 10, 2025
+          Join the First 100 Founders • Starts 10th Nov, 2025
         </p>
 
         {/* Clear outcome */}
