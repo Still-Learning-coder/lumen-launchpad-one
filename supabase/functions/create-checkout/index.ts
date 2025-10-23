@@ -25,13 +25,15 @@ serve(async (req) => {
       customerEmail: z.string()
         .email("Invalid email format")
         .max(255, "Email too long")
-        .optional()
+        .optional(),
+      planName: z.string().optional(),
+      amount: z.string().optional(),
     });
 
     // Parse and validate input
     const body = await req.json();
     const validated = requestSchema.parse(body);
-    const { priceId, customerEmail } = validated;
+    const { priceId, customerEmail, planName, amount } = validated;
 
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
@@ -47,7 +49,7 @@ serve(async (req) => {
         },
       ],
       mode: "payment",
-      success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}&customer_email={CUSTOMER_EMAIL}&customer_name={CUSTOMER_NAME}&plan_name=${encodeURIComponent(planName || '')}&amount=${encodeURIComponent(amount || '')}`,
       cancel_url: `${req.headers.get("origin")}/#payment`,
     });
 

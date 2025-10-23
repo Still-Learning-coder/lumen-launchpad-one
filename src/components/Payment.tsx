@@ -14,12 +14,16 @@ const PRICE_IDS = {
 export const Payment = () => {
   const [loading, setLoading] = useState<string | null>(null);
 
-  const handlePayment = async (plan: string, priceId: string, planName: string) => {
+  const handlePayment = async (plan: string, priceId: string, planName: string, amount: string) => {
     setLoading(plan);
     
     try {
       const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { priceId },
+        body: { 
+          priceId,
+          planName,
+          amount,
+        },
       });
 
       if (error) throw error;
@@ -81,7 +85,7 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("earlyBird", PRICE_IDS.earlyBird, "Early Bird")}
+              onClick={() => handlePayment("earlyBird", PRICE_IDS.earlyBird, "Early Bird", "$5.99")}
               size="lg"
               className="w-full bg-gradient-primary hover:shadow-glow-blue text-primary-foreground"
               disabled={loading === "earlyBird"}
@@ -114,7 +118,7 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("standard", PRICE_IDS.standard, "Standard")}
+              onClick={() => handlePayment("standard", PRICE_IDS.standard, "Standard", "$9.99")}
               size="lg"
               variant="outline"
               className="w-full border-primary/40 hover:border-primary hover:bg-primary/10"
@@ -154,7 +158,7 @@ export const Payment = () => {
             </ul>
 
             <Button
-              onClick={() => handlePayment("premium", PRICE_IDS.premium, "Premium Mentorship")}
+              onClick={() => handlePayment("premium", PRICE_IDS.premium, "Premium Mentorship", "$99")}
               size="lg"
               className="w-full bg-gradient-primary hover:shadow-glow-blue-strong text-primary-foreground"
               disabled={loading === "premium"}
@@ -180,7 +184,7 @@ export const Payment = () => {
             <div>
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary font-bold text-xl">3</div>
               <h4 className="font-semibold mb-2">First Live Session</h4>
-              <p className="text-sm text-muted-foreground">Join the kickoff session on November 1st, 2025 and start building</p>
+              <p className="text-sm text-muted-foreground">Join the kickoff session on November 10th, 2025 and start building</p>
             </div>
           </div>
         </div>
