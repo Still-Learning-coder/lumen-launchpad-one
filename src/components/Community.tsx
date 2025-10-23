@@ -28,8 +28,15 @@ export const Community = () => {
               <Button 
                 size="lg"
                 className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
+                asChild
               >
-                Join Discord
+                <a 
+                  href="https://discord.gg/njuBkcT6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Join Discord
+                </a>
               </Button>
             </div>
 
