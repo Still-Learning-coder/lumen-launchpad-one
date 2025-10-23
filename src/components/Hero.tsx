@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/cosmic-space-bg.jpg";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export const Hero = () => {
