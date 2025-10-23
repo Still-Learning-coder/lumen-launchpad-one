@@ -11,7 +11,7 @@ export const Hero = () => {
     seconds: 0,
   });
   
-  const [seatsRemaining] = useState(73); // Dynamic counter - you can update this
+  const [seatsRemaining] = useState(6); // Dynamic counter - you can update this
 
   useEffect(() => {
     const targetDate = new Date("2025-11-01T00:00:00").getTime();
