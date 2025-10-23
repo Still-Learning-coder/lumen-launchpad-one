@@ -44,8 +44,15 @@ export const Community = () => {
               <Button 
                 size="lg"
                 className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white"
+                asChild
               >
-                Join WhatsApp
+                <a 
+                  href="https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Join WhatsApp
+                </a>
               </Button>
             </div>
           </div>
