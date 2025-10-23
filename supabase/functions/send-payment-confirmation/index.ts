@@ -78,7 +78,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to admin
     const adminEmailResponse = await resend.emails.send({
       from: "Grow with Lumen <support@askgrowwithlumen.site>",
-      to: ["support@askgrowwithlumen.site"],
+      to: ["founder.asklumen.ai@gmail.com"],
       subject: `New Enrollment: ${customerName} - ${planName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
