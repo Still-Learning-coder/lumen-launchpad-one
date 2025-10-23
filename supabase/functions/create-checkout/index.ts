@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -12,11 +13,25 @@ serve(async (req) => {
   }
 
   try {
-    const { priceId, customerEmail } = await req.json();
-    
-    if (!priceId) {
-      throw new Error("Price ID is required");
-    }
+    // Define validation schema
+    const requestSchema = z.object({
+      priceId: z.string()
+        .regex(/^price_[a-zA-Z0-9]+$/, "Invalid price ID format")
+        .refine((id) => [
+          'price_1SKdzgALEZvEdhyZaBuqc26F',
+          'price_1SKdztALEZvEdhyZncS1ebbj',
+          'price_1SKe0JALEZvEdhyZRKkmbfyA'
+        ].includes(id), { message: 'Price ID not allowed' }),
+      customerEmail: z.string()
+        .email("Invalid email format")
+        .max(255, "Email too long")
+        .optional()
+    });
+
+    // Parse and validate input
+    const body = await req.json();
+    const validated = requestSchema.parse(body);
+    const { priceId, customerEmail } = validated;
 
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
@@ -42,8 +57,17 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error("Error creating checkout session:", error);
-    const errorMessage = error instanceof Error ? error.message : "An error occurred";
-    return new Response(JSON.stringify({ error: errorMessage }), {
+    
+    // Handle validation errors separately
+    if (error instanceof z.ZodError) {
+      return new Response(JSON.stringify({ error: "Invalid request data" }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 400,
+      });
+    }
+    
+    // Generic error message for other errors
+    return new Response(JSON.stringify({ error: "Failed to create checkout session" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });
