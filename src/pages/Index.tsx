@@ -16,6 +16,7 @@ import { Payment } from "@/components/Payment";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { SpaceBackground } from "@/components/SpaceBackground";
 
 const Index = () => {
   const [session, setSession] = useState<Session | null>(null);
@@ -73,25 +74,28 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background font-['Inter']">
-      <div className="fixed top-4 right-4 z-50">
-        <Button onClick={handleLogout} variant="outline">
-          Logout
-        </Button>
+    <div className="min-h-screen bg-background font-['Inter'] relative">
+      <SpaceBackground />
+      <div className="relative z-10">
+        <div className="fixed top-4 right-4 z-50">
+          <Button onClick={handleLogout} variant="outline">
+            Logout
+          </Button>
+        </div>
+        <Hero />
+        <ValueProposition />
+        <About />
+        <Founder />
+        <Advisors />
+        <Fundraising />
+        <Rewards />
+        <Testimonials />
+        <Curriculum />
+        <Community />
+        <Payment />
+        <FAQ />
+        <Footer />
       </div>
-      <Hero />
-      <ValueProposition />
-      <About />
-      <Founder />
-      <Advisors />
-      <Fundraising />
-      <Rewards />
-      <Testimonials />
-      <Curriculum />
-      <Community />
-      <Payment />
-      <FAQ />
-      <Footer />
     </div>
   );
 };

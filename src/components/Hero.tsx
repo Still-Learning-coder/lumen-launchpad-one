@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { SpaceBackground } from "./SpaceBackground";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export const Hero = () => {
@@ -37,8 +36,6 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated 3D space background */}
-      <SpaceBackground />
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/90 to-primary/10"></div>
       <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }}></div>
       
