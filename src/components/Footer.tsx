@@ -1,11 +1,14 @@
 import { Linkedin } from "lucide-react";
 export const Footer = () => {
-  return <footer className="py-12 border-t border-primary/20">
-      <div className="container mx-auto px-4">
+  return <footer className="relative py-12 border-t border-primary/20 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-space opacity-30"></div>
+      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-gradient-cosmic opacity-5 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <div className="text-2xl font-bold mb-2">
-              <span className="text-transparent bg-clip-text bg-gradient-primary">AskLumenAI</span>
+              <span className="text-transparent bg-clip-text bg-gradient-cosmic animate-shimmer bg-[length:200%_auto]">AskLumenAI</span>
             </div>
             <p className="text-muted-foreground">
               © 2025 AskLumenAI. All rights reserved.

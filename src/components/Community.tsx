@@ -3,11 +3,13 @@ import { MessageCircle, Users } from "lucide-react";
 
 export const Community = () => {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-cosmic opacity-10 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Join Our <span className="text-transparent bg-clip-text bg-gradient-primary">Founder Community</span>
+            Join Our <span className="text-transparent bg-clip-text bg-gradient-cosmic">Founder Community</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-4">
             Network with 1000+ AI founders, get ongoing support, and grow together
@@ -17,50 +19,65 @@ export const Community = () => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue">
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <MessageCircle className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Discord Community</h3>
-              <p className="text-muted-foreground mb-6">
-                24/7 support, weekly expert AMAs, co-founder matching, job board, and exclusive channels for alumni networking
-              </p>
-              <Button 
-                size="lg"
-                className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
-                asChild
-              >
-                <a 
-                  href="https://discord.gg/njuBkcT6" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="relative w-16 h-16 rounded-xl mx-auto mb-6">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-cosmic animate-orbit-slow"></div>
+                  <div className="absolute inset-0.5 rounded-xl bg-card flex items-center justify-center">
+                    <MessageCircle className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Discord Community</h3>
+                <p className="text-muted-foreground mb-6">
+                  24/7 support, weekly expert AMAs, co-founder matching, job board, and exclusive channels for alumni networking
+                </p>
+                <Button 
+                  size="lg"
+                  className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
+                  asChild
                 >
-                  Join Discord
-                </a>
-              </Button>
+                  <a 
+                    href="https://discord.gg/njuBkcT6" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Join Discord
+                  </a>
+                </Button>
+              </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue">
-              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">WhatsApp Group</h3>
-              <p className="text-muted-foreground mb-6">
-                Daily AI news, quick wins, instant peer support, and accountability partners for your startup journey
-              </p>
-              <Button 
-                size="lg"
-                className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white"
-                asChild
-              >
-                <a 
-                  href="https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="relative w-16 h-16 rounded-xl mx-auto mb-6">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-cosmic animate-orbit-slow" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="absolute inset-0.5 rounded-xl bg-card flex items-center justify-center">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-4">WhatsApp Group</h3>
+                <p className="text-muted-foreground mb-6">
+                  Daily AI news, quick wins, instant peer support, and accountability partners for your startup journey
+                </p>
+                <Button 
+                  size="lg"
+                  className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white"
+                  asChild
                 >
-                  Join WhatsApp
-                </a>
-              </Button>
+                  <a 
+                    href="https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Join WhatsApp
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

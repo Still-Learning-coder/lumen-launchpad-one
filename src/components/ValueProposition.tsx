@@ -35,16 +35,24 @@ export const ValueProposition = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue text-center group"
+              className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic text-center group animate-float-slow overflow-hidden"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <benefit.icon className="w-8 h-8 text-primary-foreground" />
-              </div>
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
+              <div className="relative z-10">
+                <div className="relative w-16 h-16 rounded-xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-cosmic animate-orbit-slow"></div>
+                  <div className="absolute inset-0.5 rounded-xl bg-card flex items-center justify-center">
+                    <benefit.icon className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

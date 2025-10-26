@@ -54,10 +54,12 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 bg-secondary/30 overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-cosmic opacity-10 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-primary">Questions</span>
+          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-cosmic">Questions</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
           Everything you need to know about the AI Startup Launchpad
@@ -69,8 +71,9 @@ export const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-primary/20 rounded-xl bg-card/50 backdrop-blur-sm px-6 hover:border-primary/40 transition-colors"
+                className="relative border border-primary/20 rounded-xl bg-card/50 backdrop-blur-sm px-6 hover:border-primary/40 transition-colors group overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-5 transition-opacity"></div>
                 <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>

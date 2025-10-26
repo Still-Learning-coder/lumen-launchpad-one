@@ -42,10 +42,13 @@ export const Payment = () => {
   };
 
   return (
-    <section id="payment" className="py-24 scroll-mt-20">
-      <div className="container mx-auto px-4">
+    <section id="payment" className="relative py-24 scroll-mt-20 overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-cosmic opacity-10 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-nebula opacity-10 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-          Choose Your <span className="text-transparent bg-clip-text bg-gradient-primary">Investment</span>
+          Choose Your <span className="text-transparent bg-clip-text bg-gradient-cosmic animate-shimmer bg-[length:200%_auto]">Investment</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-4 max-w-3xl mx-auto">
           Early bird pricing ends in 5 days. Secure your spot now!
@@ -129,19 +132,22 @@ export const Payment = () => {
           </div>
 
           {/* Premium */}
-          <div className="relative p-8 rounded-2xl bg-gradient-to-b from-primary/20 to-card/50 backdrop-blur-sm border-2 border-primary hover:border-primary transition-all duration-300 shadow-glow-blue">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-primary text-primary-foreground text-sm font-semibold flex items-center gap-1">
+          <div className="relative p-8 rounded-2xl bg-gradient-to-b from-primary/20 to-card/50 backdrop-blur-sm border-2 border-primary hover:border-primary transition-all duration-300 shadow-glow-cosmic group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-nebula opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+            
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cosmic text-primary-foreground text-sm font-semibold flex items-center gap-1 animate-cosmic-pulse">
               <Sparkles className="w-4 h-4" />
               Most Popular
             </div>
             
-            <div className="text-center mb-8 mt-4">
+            <div className="text-center mb-8 mt-4 relative z-10">
               <div className="text-2xl text-muted-foreground line-through mb-1">$299</div>
-              <div className="text-5xl font-bold mb-2 text-primary">$99</div>
+              <div className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-cosmic animate-shimmer bg-[length:200%_auto]">$99</div>
               <div className="text-muted-foreground font-semibold">Premium Mentorship + Direct Access</div>
             </div>
 
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 mb-8 relative z-10">
               {[
                 "Everything in Standard",
                 "1-on-1 mentorship sessions",
@@ -160,10 +166,11 @@ export const Payment = () => {
             <Button
               onClick={() => handlePayment("premium", PRICE_IDS.premium, "Premium Mentorship", "$99")}
               size="lg"
-              className="w-full bg-gradient-primary hover:shadow-glow-blue-strong text-primary-foreground"
+              className="relative z-10 w-full bg-gradient-cosmic hover:shadow-glow-cosmic text-primary-foreground overflow-hidden group/btn"
               disabled={loading === "premium"}
             >
-              {loading === "premium" ? "Processing..." : "Get Premium - $99"}
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover/btn:opacity-50 transition-opacity"></div>
+              <span className="relative z-10">{loading === "premium" ? "Processing..." : "Get Premium - $99"}</span>
             </Button>
           </div>
         </div>

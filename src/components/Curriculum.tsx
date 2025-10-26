@@ -41,10 +41,12 @@ const phases = [
 
 export const Curriculum = () => {
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 bg-secondary/30 overflow-hidden">
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-cosmic opacity-10 blur-3xl rounded-full"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-          Course <span className="text-transparent bg-clip-text bg-gradient-primary">Curriculum</span>
+          Course <span className="text-transparent bg-clip-text bg-gradient-cosmic">Curriculum</span>
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
           A 30-day intensive journey from problem identification to funded startup
@@ -56,24 +58,31 @@ export const Curriculum = () => {
             return (
               <div
                 key={index}
-                className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-blue"
+                className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic group overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-primary-foreground" />
+                <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="relative w-16 h-16 rounded-xl mb-6">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-cosmic animate-orbit-slow"></div>
+                    <div className="absolute inset-0.5 rounded-xl bg-card flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+
+                  <div className="text-sm text-primary font-semibold mb-2">{phase.phase}</div>
+                  <h3 className="text-2xl font-bold mb-2">{phase.title}</h3>
+                  <div className="text-sm text-muted-foreground mb-6">{phase.duration}</div>
+
+                  <ul className="space-y-3">
+                    {phase.topics.map((topic, topicIndex) => (
+                      <li key={topicIndex} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0 animate-star-twinkle"></div>
+                        <span className="text-muted-foreground">{topic}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="text-sm text-primary font-semibold mb-2">{phase.phase}</div>
-                <h3 className="text-2xl font-bold mb-2">{phase.title}</h3>
-                <div className="text-sm text-muted-foreground mb-6">{phase.duration}</div>
-
-                <ul className="space-y-3">
-                  {phase.topics.map((topic, topicIndex) => (
-                    <li key={topicIndex} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">{topic}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             );
           })}

@@ -38,21 +38,31 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Premium AI theme colors */
+    /* Cosmic space theme colors */
     --neon-blue: 194 100% 50%;
     --neon-cyan: 184 100% 60%;
+    --cosmic-purple: 270 100% 30%;
+    --cosmic-magenta: 320 100% 50%;
+    --cosmic-violet: 260 100% 60%;
+    --starlight: 0 0% 100%;
     --deep-black: 0 0% 3%;
     --charcoal: 0 0% 12%;
     
-    /* Gradients */
+    /* Cosmic gradients */
     --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%) 0%, hsl(184 100% 60%) 100%);
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 100% 30%) 0%, hsl(194 100% 50%) 50%, hsl(320 100% 50%) 100%);
+    --gradient-nebula: linear-gradient(135deg, hsl(260 100% 60% / 0.3) 0%, hsl(320 100% 50% / 0.3) 33%, hsl(194 100% 50% / 0.3) 66%, hsl(270 100% 30% / 0.3) 100%);
+    --gradient-space: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(270 100% 10%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(194 100% 50% / 0.15) 0%, transparent 70%);
     --gradient-hero: linear-gradient(135deg, hsl(194 100% 20% / 0.95) 0%, hsl(0 0% 3% / 0.98) 50%, hsl(184 80% 15% / 0.95) 100%);
     
-    /* Shadows and effects */
+    /* Cosmic shadows and glows */
     --glow-blue: 0 0 40px hsl(194 100% 50% / 0.4);
     --glow-blue-strong: 0 0 60px hsl(194 100% 50% / 0.6);
+    --glow-purple: 0 0 40px hsl(270 100% 50% / 0.4);
+    --glow-magenta: 0 0 40px hsl(320 100% 50% / 0.4);
+    --glow-cosmic: 0 0 50px hsl(194 100% 50% / 0.3), 0 0 80px hsl(270 100% 50% / 0.2);
     --shadow-premium: 0 20px 60px -15px hsl(0 0% 0% / 0.8);
     
     /* Transitions */
