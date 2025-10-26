@@ -89,7 +89,7 @@ export const Testimonials = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section className="py-24">
+    <section className="py-24 bg-background/20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
           Success <span className="text-transparent bg-clip-text bg-gradient-primary">Stories</span>
