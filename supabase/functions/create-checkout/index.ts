@@ -39,7 +39,7 @@ serve(async (req) => {
       apiVersion: "2025-08-27.basil",
     });
 
-    // Create checkout session for one-time payment
+    // Create checkout session for one-time payment with UPI support for Indian customers
     const session = await stripe.checkout.sessions.create({
       customer_email: customerEmail,
       line_items: [
@@ -48,6 +48,7 @@ serve(async (req) => {
           quantity: 1,
         },
       ],
+      payment_method_types: ['card', 'upi'], // UPI available for Indian customers
       mode: "payment",
       success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}&customer_email={CUSTOMER_EMAIL}&customer_name={CUSTOMER_NAME}&plan_name=${encodeURIComponent(planName || '')}&amount=${encodeURIComponent(amount || '')}`,
       cancel_url: `${req.headers.get("origin")}/#payment`,
