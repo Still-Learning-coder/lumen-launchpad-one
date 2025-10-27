@@ -73,7 +73,7 @@ export const FAQ = () => {
                 value={`item-${index}`}
                 className="relative border border-primary/20 rounded-xl bg-card/50 backdrop-blur-sm px-6 hover:border-primary/40 transition-colors group"
               >
-                <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-cosmic opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none"></div>
                 <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
