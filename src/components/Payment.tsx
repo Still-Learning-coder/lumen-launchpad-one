@@ -137,12 +137,12 @@ export const Payment = () => {
               </Button>
               
               <Button
-                onClick={() => handlePayTMPayment("Early Bird", "₹500")}
+                onClick={() => handlePayTMPayment("Early Bird", "₹503")}
                 size="lg"
                 variant="outline"
                 className="w-full border-primary/40 hover:border-primary hover:bg-primary/10"
               >
-                Pay with PayTM UPI - ₹500
+                Pay with PayTM UPI - ₹503
               </Button>
             </div>
           </div>
@@ -181,12 +181,12 @@ export const Payment = () => {
               </Button>
               
               <Button
-                onClick={() => handlePayTMPayment("Standard", "₹830")}
+                onClick={() => handlePayTMPayment("Standard", "₹839")}
                 size="lg"
                 variant="outline"
                 className="w-full border-primary/40 hover:border-primary hover:bg-primary/10"
               >
-                Pay with PayTM UPI - ₹830
+                Pay with PayTM UPI - ₹839
               </Button>
             </div>
           </div>
@@ -235,12 +235,12 @@ export const Payment = () => {
               </Button>
               
               <Button
-                onClick={() => handlePayTMPayment("Premium Mentorship", "₹8,250")}
+                onClick={() => handlePayTMPayment("Premium Mentorship", "₹8,316")}
                 size="lg"
                 variant="outline"
                 className="relative z-10 w-full border-primary/40 hover:border-primary hover:bg-primary/10"
               >
-                Pay with PayTM UPI - ₹8,250
+                Pay with PayTM UPI - ₹8,316
               </Button>
             </div>
           </div>
