@@ -20,7 +20,7 @@ export const Community = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic group overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
               <div className="relative z-10">
                 <div className="relative w-16 h-16 rounded-xl mx-auto mb-6">
@@ -42,6 +42,7 @@ export const Community = () => {
                     href="https://discord.gg/njuBkcT6" 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    onClick={(e) => { e.preventDefault(); window.open('https://discord.gg/njuBkcT6', '_blank', 'noopener,noreferrer'); }}
                   >
                     Join Discord
                   </a>
@@ -50,7 +51,7 @@ export const Community = () => {
             </div>
 
             <div className="relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-glow-cosmic group overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-nebula opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
               <div className="relative z-10">
                 <div className="relative w-16 h-16 rounded-xl mx-auto mb-6">
@@ -73,6 +74,7 @@ export const Community = () => {
                     href="https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt" 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    onClick={(e) => { e.preventDefault(); window.open('https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt', '_blank', 'noopener,noreferrer'); }}
                   >
                     Join WhatsApp
                   </a>
