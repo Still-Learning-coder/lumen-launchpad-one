@@ -71,6 +71,59 @@ All colors MUST be HSL.
   }
 }
 
+@layer utilities {
+  /* Cosmic animations */
+  @keyframes shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+  
+  @keyframes cosmic-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(194 100% 50% / 0.3), 0 0 40px hsl(270 100% 50% / 0.2);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 30px hsl(194 100% 50% / 0.5), 0 0 60px hsl(270 100% 50% / 0.3);
+      transform: scale(1.02);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s linear infinite;
+  }
+  
+  .animate-cosmic-pulse {
+    animation: cosmic-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Cosmic glow utilities */
+  .shadow-glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+  
+  .shadow-glow-cosmic {
+    box-shadow: var(--glow-cosmic);
+  }
+  
+  .shadow-glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .hover\:shadow-glow-blue:hover {
+    box-shadow: var(--glow-blue-strong);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
