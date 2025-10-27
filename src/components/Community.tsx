@@ -2,6 +2,17 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Users } from "lucide-react";
 
 export const Community = () => {
+  const openExternal = (url: string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (newWindow) return;
+    
+    try {
+      window.top?.open?.(url, '_blank', 'noopener,noreferrer');
+    } catch {
+      window.location.href = url;
+    }
+  };
+
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-cosmic opacity-10 blur-3xl rounded-full"></div>
@@ -36,16 +47,10 @@ export const Community = () => {
                 <Button 
                   size="lg"
                   className="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
-                  asChild
+                  onClick={() => openExternal("https://discord.gg/njuBkcT6")}
+                  aria-label="Join Discord community (opens in new tab)"
                 >
-                  <a 
-                    href="https://discord.gg/njuBkcT6" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={(e) => { e.preventDefault(); window.open('https://discord.gg/njuBkcT6', '_blank', 'noopener,noreferrer'); }}
-                  >
-                    Join Discord
-                  </a>
+                  Join Discord
                 </Button>
               </div>
             </div>
@@ -68,16 +73,10 @@ export const Community = () => {
                 <Button 
                   size="lg"
                   className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white"
-                  asChild
+                  onClick={() => openExternal("https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt")}
+                  aria-label="Join WhatsApp group (opens in new tab)"
                 >
-                  <a 
-                    href="https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={(e) => { e.preventDefault(); window.open('https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt', '_blank', 'noopener,noreferrer'); }}
-                  >
-                    Join WhatsApp
-                  </a>
+                  Join WhatsApp
                 </Button>
               </div>
             </div>
