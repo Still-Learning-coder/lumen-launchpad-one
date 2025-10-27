@@ -73,7 +73,7 @@ export const Community = () => {
                 <Button 
                   size="lg"
                   className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white"
-                  onClick={() => openExternal("https://chat.whatsapp.com/JZ49hnKGvgL2kJZ0K46m84?mode=wwt")}
+                  onClick={() => openExternal("https://chat.whatsapp.com/LiEmCrx1Jly0L1g9LzUiQM?mode=wwt")}
                   aria-label="Join WhatsApp group (opens in new tab)"
                 >
                   Join WhatsApp
